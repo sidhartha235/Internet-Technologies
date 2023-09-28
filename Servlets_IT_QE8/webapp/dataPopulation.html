@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Company Database</title>
+    <style>
+        body, input, select {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #input1, #input2 {
+            display: none;
+        }
+        .error{
+			font-size: 18px;
+			color: red;
+		}
+    </style>
+</head>
+
+<body>
+<h1>Company Database</h1>
+
+<form name="populateForm" id="populateForm" action="formServlet1" method="post">
+    <label for="whichTable">Select table: </label>
+    <select id="whichTable" name="whichTable" onchange="change()">
+		<option>--select--</option>
+        <option id="departmentOption" value="Department">Department</option>
+        <option id="employeeOption" value="Employee">Employee</option>
+    </select> <br> <br> <br>
+
+    <div id="input1">
+        <label for="departmentId1">Department ID: </label>
+        <input type="number" id="departmentId1" name="departmentId1">
+        <span id="departmentId1Error" class="error"> </span> <br> <br>
+
+        <label for="departmentName">Department Name: </label>
+        <input type="text" id="departmentName" name="departmentName">
+        <span id="departmentNameError" class="error"> </span> <br> <br>
+
+        <label for="departmentLocation">Department Location: </label>
+        <input type="text" id="departmentLocation" name="departmentLocation">
+        <span id="departmentLocationError" class="error"> </span> <br> <br>
+
+        <input type="submit" id="submit1" name="submit1" value="Submit" onclick="validateDepartment()">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <input type="reset" id="reset1" name="reset1" value="Reset">
+    </div>
+
+    <div id="input2">
+        <label for="employeeId">Employee ID: </label>
+        <input type="number" id="employeeId" name="employeeId">
+        <span id="employeeIdError" class="error"> </span> <br> <br>
+
+        <label for="employeeName">Employee Name: </label>
+        <input type="text" id="employeeName" name="employeeName">
+        <span id="employeeNameError" class="error"> </span> <br> <br>
+
+        <label for="jobTitle">Job Title: </label>
+        <input type="text" id="jobTitle" name="jobTitle">
+        <span id="jobTitleError" class="error"> </span> <br> <br>
+
+        <label for="dateOfBirth">Date Of Birth: </label>
+        <input type="date" id="dateOfBirth" name="dateOfBirth" min="1899-12-31" max="">
+        <span id="dateOfBirthError" class="error"> </span> <br> <br>
+
+        <label for="joiningDate">Joining Date: </label>
+        <input type="date" id="joiningDate" name="joiningDate" min="1950-12-31" max="">
+        <span id="joiningDateError" class="error"> </span> <br> <br>
+
+        <label for="salary">Salary: </label>
+        <input type="text" id="salary" name="salary">
+        <span id="salaryError" class="error"> </span> <br> <br>
+
+        <label for="departmentId2">Department ID: </label>
+        <input type="number" id="departmentId2" name="departmentId2">
+        <span id="departmentId2Error" class="error"> </span> <br> <br>
+
+        <input type="submit" id="submit2" name="submit2" value="Submit" onclick="validateEmployee()">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <input type="reset" id="reset2" name="reset2" value="Reset">
+    </div>
+    
+</form>
+
+</body>
+
+<script src="validation.js"></script>
+</html>

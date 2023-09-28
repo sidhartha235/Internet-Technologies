@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Query Database</title>
+    <style>
+        body, input {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #input1, #input2 {
+            display: none;
+        }
+        .error{
+			font-size: 18px;
+			color: red;
+		}
+    </style>
+</head>
+
+<body>
+
+	<h1>Query Database</h1>
+	
+	<form name="queryForm" id="queryForm" action="formServlet2" method="post" onsubmit="return validate();">
+	    
+		<h2>Enter the following:</h2>
+		<h4>To get the deatils of all the employees who joined after a 'certain date' and are over 'n' years age...</h4> <br>
+		
+		<label for="joiningDate">Joining Date: </label>
+		<input type="date" id="joiningDate" name="joiningDate" min="1950-12-31">
+		<span id="joiningDateError" class="error"> </span> <br> <br>
+		
+		<label for="age">Age(in years): </label>
+		<input type="number" id="age" name="age" min="18" max="100">
+		<span id="ageError" class="error"> </span> <br> <br>
+		
+		<input type="submit" id="submit" name="submit" value="Get Result"">
+		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+		<input type="reset" id="reset" name="reset" value="Reset">
+		
+	</form>
+
+</body>
+
+<script src="littleValidation.js"> </script>
+	
+</html>
